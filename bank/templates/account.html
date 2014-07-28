@@ -1,1 +1,25 @@
-<h1>{{account.holder}}</h1>{{account.balance}}
+{% extends "base.html" %}
+
+{% block title %}Account{% endblock %}
+
+{% block content %}
+			{% if error %}
+			<section class="error">
+				<h1>Error</h1>
+				<p>{{ error.text }}</p>
+			</section>
+			{% endif %}
+			<section class="account-info">
+				<p>Account name: {{ account.holder }}</p>
+				<p>Account balance: {{ account.balance }}</p>
+			</section>
+			<section class="transfer">
+				<form name="transfer" method="get">
+					<label for="payee">Payee</label>
+					<input type="text" name="payee" id="payee">
+					<label for="amount">Amount</label>
+					<input type="text" name="amount" id="amount">
+					<button type="submit">Transfer</button>
+				</form>
+			</section>
+{% endblock %}
