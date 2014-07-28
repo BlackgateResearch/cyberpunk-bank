@@ -8,6 +8,11 @@ def account_view(request, account_number=None):
     amount = request.GET.get('amount')
     context = {'account': account}
     if payee and amount:
+        if account.balance - int(amount) < 0:
+            context['message'] = {'text': 'not enough funds', 'type': 'error'}
+            return render_to_response('account.html', context)
+        account.balance = account.balance - int(amount)
+        account.save()
         p = Account.objects.get(pk=int(payee))
         current_balance = p.balance
         p.balance = current_balance + int(amount)
