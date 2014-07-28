@@ -3,10 +3,10 @@
 {% block title %}Account{% endblock %}
 
 {% block content %}
-			{% if error %}
-			<section class="error">
-				<h1>Error</h1>
-				<p>{{ error.text }}</p>
+			{% if message %}
+			<section class="{{ message.type}}">
+				<h1>{{ message.title }}</h1>
+				<p>{{ message.text }}</p>
 			</section>
 			{% endif %}
 			<section class="account-info">
