@@ -10,4 +10,4 @@ urlpatterns = patterns('',
     # url(r'^$', 'cyberpunk_bank.views.home', name='home'),
     url(r'^account/(?P<account_number>[0-99]+)/$', account_view),
     url(r'^admin/', include(admin.site.urls)),
-) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+)
