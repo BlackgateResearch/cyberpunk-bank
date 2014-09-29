@@ -10,17 +10,22 @@
 			</section>
 			{% endif %}
 			<section class="account-info">
+				<h1>Account Information</h1>
 				<p>Account name: {{ account.holder }}</p>
-				<p>Account balance: {{ account.balance }}</p>
+				<p>Account balance: &yen;{{ account.balance }}</p>
 			</section>
 			<section class="transfer">
+				<h1>Funds Transfer</h1>
 				<form name="transfer" method="get">
 					<label for="payee">Payee</label>
-					<input type="text" name="payee" id="payee">
-					<label for="amount">Amount</label>
+					<select name="payee" id="payee">
+						{% for payee_account in all_accounts %}
+							<option value="{{ payee_account.account_id}}">{{ payee_account.holder }}</option>
+						{% endfor %}
+					</select>
+					<label for="amount">Amount (&yen;)</label>
 					<input type="text" name="amount" id="amount">
 					<button type="submit">Transfer</button>
 				</form>
 			</section>
-			{{all_accounts}}
 {% endblock %}

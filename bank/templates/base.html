@@ -1,9 +1,16 @@
 <!doctype html>
 <html>
 	<head>
-		<title>{% block title %}{% endblock%} | Banking system</title>
+		<title>{% block title %}{% endblock%} | Infinity Banking System</title>
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/style.css" />
 	</head>
 	<body>
-	{% block content %}{% endblock %}
+		<header>
+			<img src="/static/infinity-logo.png" alt="Infinity Bank" /><h1>{% block page-header %}{% endblock %}</h1>
+		</header>
+		<section class="main-content">
+			{% block content %}{% endblock %}
+		</section>
+		<footer>This system is secured with Intrusion Countermeasure Electronics (ICE) provided by Deadlight Softworks; Infinity Bank will not be held responsible for any damage or injury caused by attempts to circumvent system security.</footer>
 	</body>
 </html>
