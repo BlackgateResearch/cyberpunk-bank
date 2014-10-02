@@ -2,6 +2,8 @@ from django.shortcuts import render_to_response, get_object_or_404
 
 from bank.models import Account
 
+def home(request):
+    return render_to_response('home.html')
 
 def account_view(request, account_id=None):
     account = get_object_or_404(Account, account_id=account_id)
