@@ -47,6 +47,19 @@ header {
 	background-color: rgba(184, 20, 5, 0.1);
 }
 
+.cta {
+	float: right;
+	padding: 5px 10px;
+	border: solid 2px #1431a5;
+	background-color: #32b2e8;
+	text-decoration: none;
+	color: #fff;
+}
+
+.cta:hover {
+	background-color: #1431a5;
+}
+
 footer {
 	width: 60%;
 	text-align: center;
