@@ -1,6 +1,6 @@
 function read(qrCode)
 {
-	var URL = "/account/" + qrCode;
+	var URL = qrCode;
 	console.log(qrCode);
 
 	document.location.href = URL;
